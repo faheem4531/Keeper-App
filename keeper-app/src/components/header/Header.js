@@ -1,12 +1,11 @@
 import React from "react";
 
-function Header ()
-{
-    return(
+const Header = () => {
+    return (
 
-        <div>
-            Hello oworld
-        </div>
+        <header>
+            <h1>Keeper</h1>
+        </header>
     )
 }
 
