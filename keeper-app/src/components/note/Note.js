@@ -5,6 +5,7 @@ const Note = (prop) => {
         <div className="note">
             <h1>{prop.heading}</h1>
             <p>{prop.detail}</p>
+            <button>DELETE</button>
         </div>
     )
 }
