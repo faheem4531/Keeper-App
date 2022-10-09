@@ -4,8 +4,19 @@ function InputArea() {
 
   const [note, setNote] = useState({
     title: "",
-    text: ""
+    content: ""
   })
+
+  function handleChange(event) {
+    const { name, value } = event.target;
+
+    setNote(preValue => {
+      return {
+        ...preValue,
+        [name]: value
+      };
+    });
+  }
 
   return (
     <div>
@@ -13,11 +24,13 @@ function InputArea() {
         <input
           name="title"
           value={note.title}
+          onChange={handleChange}
           placeholder="Title"
         />
         <textarea
           name="content"
-          value={note.text}
+          value={note.content}
+          onChange={handleChange}
           placeholder="Take a note..."
           rows="3"
         />
