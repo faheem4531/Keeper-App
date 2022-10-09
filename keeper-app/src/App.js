@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
@@ -8,8 +8,13 @@ import InputArea from "./components/inputArea/InputArea";
 
 const App = () => {
 
-  function addNote(note) {
-    console.log(note);
+  const [notes, setNotes] = useState([])
+
+  function addNote(newNotes) {
+    setNotes(
+      preValue => {
+        return [...preValue, newNotes];
+      })
   }
 
   return (
