@@ -16,14 +16,25 @@ const App = () => {
       })
   }
 
+  function deleteNote(id) {
+    setNotes(preValue => {
+      return preValue.filter((noteItem, index) => {
+        return index !== id;
+      })
+    })
+  }
+
   return (
     <div>
       <Header />
       <InputArea onAdd={addNote} />
-      {notes.map(noteItem => {
+      {notes.map((noteItem, index) => {
         return <Note
+          key={index}
+          id={index}
           title={noteItem.title}
           content={noteItem.content}
+          onDelete={deleteNote}
         />
       }
       )}
