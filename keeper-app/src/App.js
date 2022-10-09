@@ -7,10 +7,15 @@ import Detail from "./components/note/Details";
 import InputArea from "./components/inputArea/InputArea";
 
 const App = () => {
+
+  function addNote(note) {
+    console.log(note);
+  }
+
   return (
     <div>
       <Header />
-      <InputArea />
+      <InputArea onAdd={addNote} />
       {Detail.map(obj =>
         <Note
           key={obj.key}
